@@ -22,7 +22,10 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script src="//code.tidio.co/py7shfdnc6moncqyleaffduugaw12qvo.js" />
+          <script
+            async
+            src="//code.tidio.co/py7shfdnc6moncqyleaffduugaw12qvo.js"
+          />
         </body>
       </html>
     )
