@@ -23,7 +23,7 @@ export default class HTML extends React.Component {
           />
           {this.props.postBodyComponents}
           <script
-            async
+            defer
             src="//code.tidio.co/py7shfdnc6moncqyleaffduugaw12qvo.js"
           />
         </body>
