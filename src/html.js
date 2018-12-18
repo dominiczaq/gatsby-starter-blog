@@ -22,27 +22,31 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          
-          <script>
-          (function() {
-            function asyncLoad() {
-              var urls = ["\/\/code.tidio.co\/py7shfdnc6moncqyleaffduugaw12qvo.js"];
-              for (var i = 0; i < urls.length; i++) {
-                var s = document.createElement('script');
-                s.type = 'text/javascript';
-                s.async = true;
-                s.src = urls[i];
-                var x = document.getElementsByTagName('script')[0];
-                x.parentNode.insertBefore(s, x);
-              }
-            };
-            if(window.attachEvent) {
-              window.attachEvent('onload', asyncLoad);
-            } else {
-              window.addEventListener('load', asyncLoad, false);
-            }
-          })();
-          </script>
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+    (function() {
+      function asyncLoad() {
+        var urls = ["\/\/code.tidio.co\/py7shfdnc6moncqyleaffduugaw12qvo.js"];
+        for (var i = 0; i < urls.length; i++) {
+          var s = document.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = urls[i];
+          var x = document.getElementsByTagName('script')[0];
+          x.parentNode.insertBefore(s, x);
+        }
+      };
+      if(window.attachEvent) {
+        window.attachEvent('onload', asyncLoad);
+      } else {
+        window.addEventListener('load', asyncLoad, false);
+      }
+    })();
+        `,
+            }}
+          />
         </body>
       </html>
     )
